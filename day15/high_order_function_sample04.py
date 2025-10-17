@@ -13,6 +13,7 @@ def calc(init_value, op_func, *args, **kwargs):
     
     return result
 
-# 使用 lambda 表达式
-squared_sum = calc(0, lambda x, y: operator.add(x, operator.mul(y, y)), 1, 2, 3, 4)
-print(f"最终平方和: {squared_sum}")
+if __name__ == "__main__":
+    # 使用 lambda 表达式
+    squared_sum = calc(0, lambda x, y: operator.add(x, operator.mul(y, y)), 1, 2, 3, 4)
+    print(f"最终平方和: {squared_sum}")
