@@ -1,3 +1,14 @@
+"""
+Version: 1.0
+Author: 李小婕
+Date: 2025-10-19
+Decription: 可重用的计时器装饰器
+
+Keyword arguments:
+argument -- description
+Return: return_description
+"""
+
 import time
 from functools import wraps
 from datetime import datetime
@@ -54,3 +65,8 @@ def upload(file_path):
     time.sleep(1.5)
     print("上传完成")
     return f"上传文件: {file_path}成功"
+
+# 测试
+if __name__ == "__main__":
+    download("example.txt")
+    upload("example.txt")
