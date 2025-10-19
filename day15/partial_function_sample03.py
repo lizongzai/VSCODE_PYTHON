@@ -12,3 +12,6 @@ api_post = partial(make_request, method='POST')
 # 使用简化后的函数
 api_get('https://api.example.com/users')
 api_post('https://api.example.com/users', timeout=10)
+
+
+
