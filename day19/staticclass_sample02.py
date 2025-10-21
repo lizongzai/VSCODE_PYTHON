@@ -1,0 +1,86 @@
+import math
+
+class Triangle:
+    """
+    三角形类
+    """
+    
+    def __init__(self, side_a, side_b, side_c):
+        """
+        初始化三角形
+        """
+        if not self.is_valid_triangle(side_a, side_b, side_c):
+            raise ValueError(f"边长({side_a}, {side_b}, {side_c})无法构成三角形")
+        
+        self.side_a = side_a
+        self.side_b = side_b
+        self.side_c = side_c
+    
+    @classmethod
+    def is_valid_triangle(cls, a, b, c):
+        """
+        类方法：验证三条边长是否能构成三角形
+        三角形条件：任意两边之和大于第三边，且所有边长为正数
+        """
+        # 检查边长是否为正数
+        if a <= 0 or b <= 0 or c <= 0:
+            return False
+        
+        # 检查三角形不等式
+        if a + b <= c:
+            return False
+        if a + c <= b:
+            return False
+        if b + c <= a:
+            return False
+        
+        return True
+    
+    @classmethod
+    def from_sides(cls, a, b, c):
+        """
+        类方法：工厂方法，验证边长后创建三角形对象
+        这展示了类方法的另一个优势
+        """
+        if not cls.is_valid_triangle(a, b, c):
+            raise ValueError(f"边长({a}, {b}, {c})无法构成三角形")
+        return cls(a, b, c)
+    
+    def perimeter(self):
+        """实例方法：计算三角形的周长"""
+        return self.side_a + self.side_b + self.side_c
+    
+    def area(self):
+        """实例方法：计算三角形的面积（使用海伦公式）"""
+        p = self.perimeter() / 2  # 半周长
+        area = math.sqrt(p * (p - self.side_a) * (p - self.side_b) * (p - self.side_c))
+        return area
+    
+    def __str__(self):
+        return f"三角形(边长: {self.side_a}, {self.side_b}, {self.side_c})"
+
+
+# 使用示例
+if __name__ == "__main__":
+    print("=== 使用类方法 ===")
+    
+    # 1. 直接通过类调用类方法（不需要实例）
+    print("验证边长:")
+    print(f"Triangle.is_valid_triangle(3, 4, 5): {Triangle.is_valid_triangle(3, 4, 5)}")
+    print(f"Triangle.is_valid_triangle(1, 1, 3): {Triangle.is_valid_triangle(1, 1, 3)}")
+    print()
+    
+    # 2. 使用工厂方法创建对象
+    print("使用工厂方法创建三角形:")
+    try:
+        triangle1 = Triangle.from_sides(3, 4, 5)
+        print(f"创建成功: {triangle1}")
+        print(f"周长: {triangle1.perimeter()}, 面积: {triangle1.area()}")
+    except ValueError as e:
+        print(f"创建失败: {e}")
+    print()
+    
+    # 3. 通过实例也能调用类方法（但不推荐）
+    if Triangle.is_valid_triangle(5, 5, 5):
+        triangle2 = Triangle(5, 5, 5)
+        print(f"通过实例调用类方法: {triangle2.is_valid_triangle(2, 2, 3)}")  # 可以调用，但不推荐
