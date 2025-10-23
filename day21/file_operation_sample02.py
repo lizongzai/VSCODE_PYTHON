@@ -1,3 +1,11 @@
+"""
+Version: 1.0
+Author: 李小婕
+Description: 传统方式读取整个文件和使用with上下文管理器读取文件的方法
+Date: 2025-10-23
+"""
+
+
 # 第一种方式：传统方式读取整个文件
 file = open('致橡树.txt', 'r', encoding='utf-8')
 print(file.read())
