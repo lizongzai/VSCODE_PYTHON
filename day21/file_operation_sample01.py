@@ -1,3 +1,10 @@
+"""
+Version: 1.0
+Author: 李小婕
+Description: 创建并写入《致橡树》内容
+Date: 2025-10-23
+"""
+
 # 创建并写入《致橡树》内容
 with open('致橡树.txt', 'w', encoding='utf-8') as file:
     file.write('''《致橡树》
