@@ -1,0 +1,5 @@
+<!-- 源文件: config.txt -->
+<!-- 复制时间: nt.times_result(user=0.03125, system=0.015625, children_user=0.0, children_system=0.0, elapsed=0.0) -->
+用户名: admin
+密码: 123456
+服务器: localhost

@@ -1,0 +1,17 @@
+=== 合并文件 ===
+
+--- config.txt ---
+用户名: admin
+密码: 123456
+服务器: localhost
+
+--- data.txt ---
+这是数据文件
+包含一些重要的信息
+处理完成
+
+--- log.txt ---
+2024-01-01 10:00:00 系统启动
+2024-01-01 10:05:00 用户登录<!-- 处理时间: nt.times_result(user=0.03125, system=0.015625, children_user=0.0, children_system=0.0, elapsed=0.0) -->
+
+
