@@ -1,1 +1,2 @@
-<!-- 处理时间: nt.times_result(user=0.03125, system=0.015625, children_user=0.0, children_system=0.0, elapsed=0.0) -->
+这条消息会被写入到output.txt文件中
+而不是显示在控制台上
