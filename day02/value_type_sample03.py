@@ -19,3 +19,13 @@ print("\n数值类型:")
 print(f"a: {a}, 类型: {type(a)}")
 print(f"b: {b}, 类型: {type(b)}")
 print(f"c: {c}, 类型: {type(c)}")
+
+print(f"d: {d}, 类型: {type(d)}")
+print(f"e: {e}, 类型: {type(e)}")
+print(f"f: {f}, 类型: {type(f)}")
+# 字符串类型
+str1 = "Hello, World!"
+str2 = 'Python 编程'
+print("\n字符串类型:")
+print(f"str1: {str1}, 类型: {type(str1)}")
+print(f"str2: {str2}, 类型: {type(str2)}")
