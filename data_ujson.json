@@ -1,0 +1,22 @@
+{
+  "name": "Âæê»",
+  "age": 40,
+  "friends": [
+    "Íõ´ó´¸",
+    "°×Ôª·¼"
+  ],
+  "cars": [
+    {
+      "brand": "BMW",
+      "max_speed": 240
+    },
+    {
+      "brand": "Benz",
+      "max_speed": 280
+    },
+    {
+      "brand": "Audi",
+      "max_speed": 280
+    }
+  ]
+}
