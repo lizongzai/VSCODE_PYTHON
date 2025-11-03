@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .header { background: #f4f4f4; padding: 20px; text-align: center; }
+        .content { padding: 20px; }
+        .section { margin-bottom: 20px; }
+        .section-title { color: #333; border-bottom: 2px solid #007cba; padding-bottom: 5px; }
+        .footer { background: #f4f4f4; padding: 10px; text-align: center; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ department }}{{ period }}工作情况汇报</h1>
+    </div>
+    
+    <div class="content">
+        <p>尊敬的{{ leader }}：</p>
+        
+        <div class="section">
+            <h3 class="section-title">📊 工作完成情况</h3>
+            <p>{{ completed_work|replace('\n', '<br>')|safe }}</p>
+        </div>
+        
+        <div class="section">
+            <h3 class="section-title">⚠️ 存在问题</h3>
+            <p>{{ existing_issues|replace('\n', '<br>')|safe }}</p>
+        </div>
+        
+        <div class="section">
+            <h3 class="section-title">🎯 下一步计划</h3>
+            <p>{{ next_plan|replace('\n', '<br>')|safe }}</p>
+        </div>
+        
+        {% if other_matters %}
+        <div class="section">
+            <h3 class="section-title">📝 其他事项</h3>
+            <p>{{ other_matters|replace('\n', '<br>')|safe }}</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="footer">
+        <p>汇报人：{{ reporter }} | 日期：{{ date }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+主题：{{ title }}
+
+{{ content }}
+
+{% if signature %}
+{{ signature }}
+{% endif %}
+
+{{ date }}
