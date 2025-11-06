@@ -31,6 +31,7 @@ def select_sort_verbose(items, comp=lambda x, y: x < y):
             
             # 第三次比较x > y： j =3 , min_index=2， items[j] =items[3] = 2， items[min_index]=items[2] = 4 ---> min_index =2
             # 结果： 2 > 4, j = 4, min_index=2, i = 0,
+            # 交换 items[0]=4 和 items[2]=3
             # 第一轮排序输出的结果：[4，1，3，2]
             
             # =======================================第二轮比较=========================================================================
@@ -39,12 +40,14 @@ def select_sort_verbose(items, comp=lambda x, y: x < y):
             # 结果： 3 > 1 ---> true, j =3, min_index=2
             # 第二次比较x > y： j =3 , min_index=2， items[j] =items[3] = 2， items[min_index]=items[2] = 3 ---> min_index =2
             # 结果： 2 > 3 ---> false, j =4, min_index=2
+            # 交换 items[1]=3 和 items[2]=1
             # 第二轮排序输出的结果：[4，3，1，2]
            
             # =======================================第三轮比较=========================================================================
             # 初始化：当 i = 2, j =3， min_index=2时，如下开始排序：
             # 第一次比较x > y： j =3 , min_index=2， items[j] =items[3] = 2， items[min_index]=items[2] = 1 ---> min_index =2
             # 结果： 2 > 1 ---> true, j =4, min_index=3
+            # 交换 items[2]=2 和 items[3]=1
             # 第三轮排序输出的结果：[4，3，2，1]
             
             
@@ -65,7 +68,7 @@ def select_sort_verbose(items, comp=lambda x, y: x < y):
 
 
 if __name__ == "__main__":
-    # 测试示例，降序排序
+    # 测试示例，使用降序排序（x > y）
     nums = [3, 1, 4, 2]
     sorted_nums = select_sort_verbose(nums, comp=lambda x, y: x > y)
     print("\n最终排序结果:", sorted_nums)
