@@ -64,10 +64,11 @@ def select_sort_verbose(items, comp=lambda x, y: x < y):
     return items
 
 
-# 测试示例，降序排序
-nums = [3, 1, 4, 2]
-sorted_nums = select_sort_verbose(nums, comp=lambda x, y: x > y)
-print("\n最终排序结果:", sorted_nums)
+if __name__ == "__main__":
+    # 测试示例，降序排序
+    nums = [3, 1, 4, 2]
+    sorted_nums = select_sort_verbose(nums, comp=lambda x, y: x > y)
+    print("\n最终排序结果:", sorted_nums)
 
 
 # 只交换两个位置：
